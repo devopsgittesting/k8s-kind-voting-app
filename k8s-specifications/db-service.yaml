@@ -5,11 +5,11 @@ metadata:
     app: db
   name: db
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - name: "db-service"
     port: 5432
     targetPort: 5432
+    nodePort: 30007  # Must be within 30000–32767
   selector:
     app: db
-  
